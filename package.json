@@ -15,11 +15,11 @@
     "url": "https://github.com/IBM-Bluemix/get-started-node"
   },
   "dependencies": {
-    "cf-deployment-tracker-client": "^0.1.1",
+    "cf-deployment-tracker-client": "*",
     "cfenv": "1.0.x",
     "express": "3.4.x",
-    "underscore": "1.6.x",
-    "cf-deployment-tracker-client": "*"
+    "request": "^2.74.0",
+    "underscore": "1.6.x"
   },
   "author": "IBM Corp",
   "contributors": [
