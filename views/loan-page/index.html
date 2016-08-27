@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loan</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+	<script type="text/javascript" href=assets/js/bootstrap.min.css></script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="">Goal</a></li>
+            <li class="active"><a href="">Loan</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+	<div id="container">
+    <span id="animationSandbox" style="display: block;" class="bounceInLeft animated">
+		<h1>Request a <span style="color: #D45113;">loan.</span></h1>
+		<p>This will be deducted from your goal.</p>
+
+		<form>
+			<p> Visa number : &nbsp;<input type="text" name="visa-no"></p>
+			<p> Date: &nbsp;<input type="date" name="date" value="mm/dd/yy"></p>
+			<p> CVV: &nbsp;<input type="text" name="ccv"></p>
+
+			<input type="button" name="btn-submit" value="Submit">
+		</form>
+	</div>	
+
+
+</body>
+</html>
