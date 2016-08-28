@@ -19,12 +19,21 @@
 			color: #004385;
 		}
 		
-		input[type=text] {
+		#goal-name {
 			width: 100px;
 			transition: ease-in-out, width .35s ease-in-out;
 		}
 
-		input[type=text]:focus {
+		#goal-name:focus {
+			width: 270px;
+		}
+		
+		#goal-cost {
+			width: 100px;
+			transition: ease-in-out, width .35s ease-in-out;
+		}
+
+		#goal-cost:focus {
 			width: 270px;
 		}
 		
@@ -48,31 +57,22 @@
 
 	<div style = "margin: 0; padding: 2em 10em">
 		
-		<h3 style = "color: #d45113;">Step 1 of 4</h3>
+		<h3 style = "color: #d45113;">Step 4 of 4</h3>
 		<br/>
 		<div class="progress">
-			<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">1/4</div>
+			<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">4/4</div>
 		</div>
 		<br/>
 		
-		<h4>Enter your bank account</h4>
-		<h6 id = "lester">Your account number here</h6>
-		<br/>
-		<div class="input-group">
-			<input type="text" class="form-control" placeholder="..." aria-describedby="sizing-addon2" size = "23"/>
-		</div>
-		<br/>
-		<br/>
+		<h4>Now are all set-up.</h4>
+		<h3 id = "lester">Start worry free with Lester</h3>
 		<br/>
 		<br/>
 		<div>
-			<a href = "step2.html"><button id = "next-button">Go to next step <span class = "glyphicon glyphicon-menu-right"></span></button></a>
+			<a href = "dashboard.html" target = "_top"><button id = "next-button">PROCEED</button></a>
 		</div>
+		
 	</div>
-	
-	<script>
-	
-	</script>
 
 
 </body>
