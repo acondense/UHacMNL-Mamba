@@ -8,7 +8,7 @@
 	<script type="text/javascript" href=assets/js/bootstrap.min.css></script>
 </head>
 
-<body>
+<body ng-app="loanApp" ng-controller="loanCtrl">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -40,10 +40,51 @@
 			<p> Visa number : &nbsp;<input type="text" name="visa-no"></p>
 			<p> Date: &nbsp;<input type="date" name="date" value="mm/dd/yy"></p>
 			<p> CVV: &nbsp;<input type="text" name="ccv"></p>
+      <p> Amount: &nbsp;<input type="name" name="amount"></p>
 
-			<input type="button" name="btn-submit" value="Submit">
+			<input type="button" name="btn-submit" value="Submit" ng-click="request()">
 		</form>
-	</div>	
+	</div>
+    <script>
+    // angular script to load the data
+    // get the size of tree based on the completion
+    
+    var config = {
+      apiKey: "AIzaSyDjldqZXjxfne0nXPXDNJh0nvtloz58qRc",
+      authDomain: "lester-999dc.firebaseapp.com",
+      databaseURL: "https://lester-999dc.firebaseio.com",
+      storageBucket: "",
+    };
+    firebase.initializeApp(config);
+
+    var curValue;
+    var targetValue;
+    
+    var total = 0;
+    var earned = 0;
+    var app = angular.module('loanApp', []);
+    app.controller('loanCtrl', function($scope) {
+
+      // load the values via ajax
+      $scope.earned = 10000;
+      $scope.total = 15000;
+
+      $scope.request = function() {
+        var value = parseInt($("#addInput").val());
+        $scope.earned -= value;
+
+        // hard coded
+        userID = 13123213;
+
+        firebase.database().ref('users/' + userID + "/goal").set({
+          earned: $scope.earned
+        });
+
+        // transfer money to bank
+        // here
+      }
+    });
+  </script>
 
 
 </body>

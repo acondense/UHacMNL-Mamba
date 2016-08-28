@@ -6,6 +6,7 @@
 	<title>GOAL</title>
 	<link rel="stylesheet" href="">
 	<script src="angular/angular.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 	<script src="js/jquery.js">
 	</script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -81,7 +82,7 @@
 </head>
 <body>
 	
-	<div ng-app="goalApp" ng-controller="goalCtr">
+	<div ng-app="goalApp" ng-controller="goalCtrl">
 
 	<br />
 	<br />
@@ -173,12 +174,26 @@
 	<script>
 		// angular script to load the data
 		// get the size of tree based on the completion
-		// 
+		
+		var config = {
+	    	apiKey: "AIzaSyDjldqZXjxfne0nXPXDNJh0nvtloz58qRc",
+	    	authDomain: "lester-999dc.firebaseapp.com",
+	    	databaseURL: "https://lester-999dc.firebaseio.com",
+	    	storageBucket: "",
+	  	};
+	  	firebase.initializeApp(config);
+
+	  	var curValue;
+	  	var targetValue;
+
+		$("td").click(function(){
+		  $(this).css("background-color", "rgba(0,0,0,0)");
+		});
 		
 		var total = 0;
 		var earned = 0;
 		var app = angular.module('goalApp', []);
-		app.controller('goalCtr', function($scope) {
+		app.controller('goalCtrl', function($scope) {
 
 			// load the values via ajax
 			$scope.earned = 10000;
@@ -187,18 +202,20 @@
 		    $scope.add = function() {
 		    	var value = parseInt($("#addInput").val());
 		    	$scope.earned += value;
+
+		    	// hard coded
+		    	userID = 13123213;
+
+		    	firebase.database().ref('users/' + userID + "/goal").set({
+					earned: $scope.earned
+				});
+
+				// transfer money to bank
+				// here
 		    }
 		});
 	</script>
 	<script>
-
-		$("td").click(function(){
-		  $(this).css("background-color", "rgba(0,0,0,0)");
-		});
-
-		$("#add").click(function() {
-
-		})
 
     </script>
 </body>
