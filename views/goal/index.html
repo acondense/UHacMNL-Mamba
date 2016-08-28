@@ -231,18 +231,34 @@
 		app.controller('goalCtrl', function($scope) {
 
 			// load the values via ajax
-			$scope.earned = 10000;
-		    $scope.total = 15000;
+			// 
+			// 
+			// hard coded
+		    userID = 13123213;
+			$scope.earned = 0;
+		    $scope.total = 0;
 
+		    var userGoalRef = firebase.database().ref('users/' + userID + '/goal');
+				starCountRef.on('value', function(snapshot) {
+			  	updateStarCount(postElement, snapshot.val());
+			});
+
+			var bankAmount = 0;
 		    $scope.add = function() {
 		    	var value = parseInt($("#addInput").val());
 		    	$scope.earned += value;
 
-		    	// hard coded
-		    	userID = 13123213;
-
 		    	firebase.database().ref('users/' + userID + "/goal").set({
 					earned: $scope.earned
+				});
+
+		    	
+				firebase.database().ref('bank').once('value').then(function(snapshot) {
+					var bankAmount = snapshot.val().amount;
+				});
+
+				firebase.database().ref('bank').set({
+					amount: bankAmount + value;
 				});
 
 				// transfer money to bank

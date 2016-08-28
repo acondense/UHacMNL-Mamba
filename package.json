@@ -19,6 +19,7 @@
     "cfenv": "1.0.x",
     "ejs": "^2.5.1",
     "express": "3.4.x",
+    "http": "0.0.0",
     "request": "^2.74.0",
     "underscore": "1.6.x"
   },
