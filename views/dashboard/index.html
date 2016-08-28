@@ -10,6 +10,15 @@
 	<script src="../js/jquery.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<style type="text/css">
+		#addGoal:hover {
+			background-color: #DF7F51;
+			color: white;
+		}
+	</style>
+
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,38 +47,42 @@
 	<br>
 	<br>
 	<br>
-	<!-- <div>
-		<h1>Your current money</h1>
-		<h3 id="displayAmount"></h3>
-	</div>
- -->
-	<div id="accntInfo">
-		<h1>Account Information</h1>
-			<ul>
+
+ 	<div class="container">
+ 		 <span id="animationSandbox" style="display: block;" class="bounceInLeft animated">
+ 		<div class="row" style="font-size: 16px; font-family: Montserrat;">
+ 		<div class="col-md-4" >
+		<h1 style="font-family: Montserrat; color: #D45113;">Account Info</h1>
+			<ul style="list-style-type: none;">
 				<li>Account Number</li>
 				<li>Account Name</li>
 				<li>Balance</li>
 			</ul>
-	</div>
-
-	<div id="expenses">
-		<h1>Expenses</h1>
-			<ul>
+		</div>
+		<div class="col-md-4">
+		<h1 style="font-family: Montserrat; color:#087CA7;">Expenses</h1>
+			<ul style="list-style-type: none;">
 				<li>Merchant Name</li>
 				<li>Account Number</li>
 				<li>Due-date</li>
 				<li>Estimated bill</li>
 				<li>Bill</li>
 			</ul>
-	</div>
-		<h1>Goal</h1>
-			<ul>
+		</div>
+		<div class="col-md-4">
+			<h1 style="font-family: Montserrat; color:#087CA7;"">Goal</h1>
+			<ul style="list-style-type: none;"	>
 				<li>Name of Goal</li>
 				<li>Percent of Completion</li>
 				<li>Earned Money</li>
-				<li><button ng-click="add()" class="btn btn-lg">ADD TO GOAL</button></li>
+				<br>
+				<button id="addGoal" ng-click="add()" class="btn btn-lg"  style="background-color: #D45113; color: white;">ADD TO GOAL</button>
 			</ul>
+			
+		</div>
+		</div>
 	</div>
+
 
 
 
