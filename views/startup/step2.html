@@ -3,6 +3,8 @@
 <head>
 	<title>Getting Started</title>
 	<link rel = "stylesheet" href = "css/bootstrap.css" />
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="../js/angular/angular.min.js"></script>
 	<script src ="js/jquery.js"></script>
 	<style>
 	
@@ -38,7 +40,7 @@
 
 <body style = "margin: 0; padding: 0;">
 
-	<div style = "margin: 0; padding: 2em 10em">
+	<div style = "margin: 0; padding: 2em 10em" ng-app="step2App" ng-controller="step2Controller">
 		
 		<h3 style = "color: #d45113;">Step 2 of 4</h3>
 		<br/>
@@ -74,19 +76,39 @@
 			</div>
 		</div>
 		<div>
-			<a href = "step3.html"><button id = "next-button">Go to next step <span class = "glyphicon glyphicon-menu-right"></span></button></a>
+			<a href = "step3.html"><button id = "next-button" ng-click="stepTo3()">Go to next step <span class = "glyphicon glyphicon-menu-right"></span></button></a>
 		</div>
 				
 	</div>
 	
-	<script>	
+
+	<script>
+
+		var config = {
+	    	apiKey: "AIzaSyDjldqZXjxfne0nXPXDNJh0nvtloz58qRc",
+	    	authDomain: "lester-999dc.firebaseapp.com",
+	    	databaseURL: "https://lester-999dc.firebaseio.com",
+	    	storageBucket: "",
+	  	};
+	  	firebase.initializeApp(config);
 	
+		var app = angular.module('step2App', []);
+		app.controller('step2Controller', function($scope) {
+
+			var merChantObj = {};
+			var arrayMerchat = [];
+			// get all the merchants
+			
+
+		});
+
 		$(function(){
 			$(document).on('click', '.btn-add', function(e){
 			e.preventDefault();
 
 			var controlForm = $('.controls form:first'),
 			currentEntry = $(this).parents('.entry:first'),
+			// when add is clicked
             newEntry = $(currentEntry.clone()).appendTo(controlForm);
 
 			newEntry.find('input').val('');

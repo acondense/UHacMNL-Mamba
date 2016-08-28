@@ -3,6 +3,8 @@
 <head>
 	<title>Getting Started</title>
 	<link rel = "stylesheet" href = "css/bootstrap.css" />
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+	<script src="../js/angular/angular.min.js"></script>
 	<script src ="js/jquery.js"></script>
 	<style>
 	
@@ -69,15 +71,40 @@
 		<br/>
 		<div>
 			<p>Name of your goal</p>
-			<input type="text" class="form-control" name = "goal-name" placeholder="Goal" aria-describedby="sizing-addon2" size = "10" id = "goal-name"/><br/>
+			<input ng-model="goalName" type="text" class="form-control" name = "goal-name" placeholder="Goal" aria-describedby="sizing-addon2" size = "10" id = "goal-name"/><br/>
 			<p>Estimated cost of goal</p>
-			<input type="text" class="form-control" name = "goal-cost" placeholder="0.00" aria-describedby="sizing-addon2" size = "10" id = "goal-cost"/>
+			<input ng-model="goalCost" type="text" class="form-control" name = "goal-cost" placeholder="0.00" aria-describedby="sizing-addon2" size = "10" id = "goal-cost"/>
 		</div>
 		<br/>
 		<div>
 			<a href = "step4.html"><button id = "next-button">Go to next step <span class = "glyphicon glyphicon-menu-right"></span></button></a>
 		</div>
-	</div>>
+	</div>
+
+	<script>
+
+		var config = {
+	    	apiKey: "AIzaSyDjldqZXjxfne0nXPXDNJh0nvtloz58qRc",
+	    	authDomain: "lester-999dc.firebaseapp.com",
+	    	databaseURL: "https://lester-999dc.firebaseio.com",
+	    	storageBucket: "",
+	  	};
+	  	firebase.initializeApp(config);
+
+		var app = angular.module('step3App', []);
+		app.controller('step3Ctrl', function($scope) {
+
+			// load the values via ajax
+			// image upload
+			var goalName = $scope.goalName;
+			var goalCost = $scope.goalCost;
+
+			// send to the data base - firebase
+			
+
+
+		});
+	</script>
 
 
 </body>

@@ -8,7 +8,7 @@
   <script type="text/javascript" href=assets/js/bootstrap.min.css></script>
 </head>
 
-<body>
+<body ng-app="loanApp" ng-controller="loanCtrl">
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -23,27 +23,57 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="">Goal</a></li>
-            <li class="active"><a href="">Loan</a></li>
+            <li class="active"><a href="">Withdraw</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
   <div id="container">
+<<<<<<< HEAD
 
   <div class="row">
   <div class="col-md-10">
+=======
+<<<<<<< HEAD
+    <div class="row">
+      <div class="col-md-6">
+      <span id="animationSandbox" style="display: block;" class="bounceInLeft animated">
+    <h1>Withdraw</h1></span>
+=======
+>>>>>>> 955745c266ae97ec5eced22b78b020aad6211097
     <span id="animationSandbox" style="display: block;" class="bounceInLeft animated">
-    <h1>Request a <span style="color: #D45113;">loan.</span></h1>
+    <h1>Request a <span style="color: #D45113;">withdraw</span></h1>
+>>>>>>> 8600523199980b181b11833163b8deca99edfa03
     <p>This will be deducted from your goal.</p>
+	<br/>
+	<br/>
+		<form>
+			<p> <b>Account number : &nbsp;<input type="text" name="visa-no"></b></p>
+			<p> <b>Amount: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="name" name="amount"></b></p>
+			<br/>
+			<br/>
+			<input type="button" name="btn-submit" value="Submit" ng-click="request()">
+		</form>
 
-    <form>
-      <p> Visa number : &nbsp;<input type="text" name="visa-no"></p>
-      <p> Date: &nbsp;<input type="date" name="date" value="mm/dd/yy"></p>
-      <p> CVV: &nbsp;<input type="text" name="ccv"></p>
+    </div>
+    </div>
+	 </div>
+    <script>
+    // angular script to load the data
+    // get the size of tree based on the completion
+    
+    var config = {
+      apiKey: "AIzaSyDjldqZXjxfne0nXPXDNJh0nvtloz58qRc",
+      authDomain: "lester-999dc.firebaseapp.com",
+      databaseURL: "https://lester-999dc.firebaseio.com",
+      storageBucket: "",
+    };
+    firebase.initializeApp(config);
 
+<<<<<<< HEAD
       <input type="button" name="btn-submit" value="Submit">
     </form>
     </div>
@@ -53,6 +83,37 @@
   </div>
 
   </div>
+=======
+    var curValue;
+    var targetValue;
+    
+    var total = 0;
+    var earned = 0;
+    var app = angular.module('loanApp', []);
+    app.controller('loanCtrl', function($scope) {
+
+      // load the values via ajax
+      $scope.earned = 10000;
+      $scope.total = 15000;
+
+      $scope.request = function() {
+        var value = parseInt($("#addInput").val());
+        $scope.earned -= value;
+
+        // hard coded
+        userID = 13123213;
+
+        firebase.database().ref('users/' + userID + "/goal").set({
+          earned: $scope.earned
+        });
+
+        // transfer money to bank
+        // here
+      }
+    });
+  </script>
+    
+>>>>>>> 955745c266ae97ec5eced22b78b020aad6211097
   </div>  
 
 
