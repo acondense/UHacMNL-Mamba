@@ -6,7 +6,27 @@ var port = process.env.VCAP_APP_PORT || 8080;
 var options;
 var shortOptions;
 var envOptions = {};
+var path    = require("path");
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/views'));
+
+app.get('/',function(req,res){
+  res.render(path.join(__dirname+'/views/goal/index.html'));
+});
+
+app.get('/dashboard',function(req,res){
+  res.render(path.join(__dirname+'/views/dashboard/index.html'));
+});
+
+app.get('/goal',function(req,res){
+  res.render(path.join(__dirname+'/views/goal/index.html'));
+});
+
+app.get('/loan-page',function(req,res){
+  res.render(path.join(__dirname+'/views/goal/index.html'));
+});
+
 require("cf-deployment-tracker-client").track();
 
 // Guide Part 1 - loading the To-Do without Cloudant.
