@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Getting Started</title>
+	<link rel = "stylesheet" href = "css/bootstrap.css" />
+	<script src ="js/jquery.js"></script>
+	<style>
+	
+		* {
+			font-family: Montserrat;
+			border-radius : 0;
+		}
+		
+		#field {
+			margin-bottom: 20px;
+		}
+		
+		#lester {
+			color: #004385;
+		}
+
+	</style>
+	
+</head>
+
+<body style = "margin: 0; padding: 0;">
+
+	<div style = "margin: 0; padding: 2em 10em">
+		
+		<h3 style = "color: #d45113;">Step 2 of 4</h3>
+		<br/>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">2/4</div>
+		</div>
+		<br/>
+		
+		<h4>Distribution of income</h4>
+		<h6 id = "lester">Where to use your income, buddy?</h6>
+		<br/>
+		<div class="container">
+			<div class="row">
+				<div class="control-group" id="fields">
+					<div class="controls"> 
+						<form role="form" autocomplete="off">
+							<div class="entry input-group col-xs-3">
+								<input class="form-control" name="fields[]" type="text" placeholder="Merchant Name" />
+								<input class="form-control" name="fields[]" type="text" placeholder="Merchant's Account" />
+								<input class="form-control" name="fields[]" type="text" placeholder="Expected Bill" />
+								<span class="input-group-btn">
+									<button class="btn btn-success btn-add" type="button">
+										<span class="glyphicon glyphicon-plus"></span>
+									</button>
+								</span>
+								<br/>
+								<br/>
+							</div>
+						</form>
+						<h6 id = "lester">Press <span class="glyphicon glyphicon-plus gs"></span> to add another merchant.</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</div>
+	
+	<script>	
+	
+		$(function(){
+			$(document).on('click', '.btn-add', function(e){
+			e.preventDefault();
+
+			var controlForm = $('.controls form:first'),
+			currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+			newEntry.find('input').val('');
+			controlForm.find('.entry:not(:last) .btn-add')
+				.removeClass('btn-add').addClass('btn-remove')
+				.removeClass('btn-success').addClass('btn-danger')
+				.html('<span class="glyphicon glyphicon-minus"></span>');
+			}).on('click', '.btn-remove', function(e){
+				$(this).parents('.entry:first').remove();
+				e.preventDefault();
+				return false;
+			});
+		});
+		
+	</script>
+		
+	</div>
+
+</body>
+
+
+</html>
