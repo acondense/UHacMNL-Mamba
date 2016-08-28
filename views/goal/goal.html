@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GOAL</title>
+	<title>Goal</title>
 	<link rel="stylesheet" href="">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<script src="angular/angular.min.js"></script>
 	<script src="js/jquery.js">
 	</script>
@@ -12,14 +13,18 @@
 
 	<style>
 		body {
-			background-color: #087CA7;
+			/*background-color: #087CA7;*/
 			margin: 0 auto;
 			text-align: center;
 			font-family: 
 		}
-		h1, h3 {
+		h1 {
 			font-family: Monsterrat-Bold;
-			color: white;
+			color: #087CA7;
+		}
+		h3 {
+			font-family: Monsterrat-Bold;
+			color: #087CA7;
 		}
 		#goalName {
 			font-size: 100px;
@@ -59,12 +64,16 @@
 			width: 70px;
 			height: 70px;
 			margin: 0px;
-			background-color: black;
+			background-color: #AEAEAE;
 			color: white;
 		}
 		td:hover {
 			border: 1px solid white;
 
+		}
+		#add:hover {
+			background-color: #DF7F51;
+			color: white;
 		}
 		#puzzle {
 			margin: 0 auto;
@@ -76,16 +85,44 @@
 			text-align: left;
 			color: white;
 		}
+		#addValue label{
+			color: #333333;
+		}
 		</style>
 	</style>
 </head>
+
 <body>
 	
 	<div ng-app="goalApp" ng-controller="goalCtr">
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#">Project name</a> -->
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li class="active"><a href="">Goal</a></li>
+            <li><a href="">Loan</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-	<br />
-	<br />
+    <br>
+	<br>
+	<br>
+	<br>
 	<div class="row">
+	 <span id="animationSandbox" style="display: block;" class="bounceInLeft animated">
 		<div class="col-md-6" id="goalDesc">
 				<h1 id="goalName">House</h1>
 				<h3 id="completionText">69% Completed</h3>
@@ -105,6 +142,7 @@
 					<br />
 					<button id="add" ng-click="add()" class="btn btn-lg">ADD TO GOAL</button>
 				</div>
+		</span>
 		</div>
 		
 		<div class="col-md-6">
