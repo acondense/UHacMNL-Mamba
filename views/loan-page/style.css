@@ -42,7 +42,7 @@ input[type=text] {
 	border-radius: 5px;	
 	padding: 10px 10px;
 	font-family: Montserrat;
-	font-size: 16px;
+	font-size: 12px;
 }
 
 input[type=date] {
@@ -52,4 +52,5 @@ input[type=date] {
 	border-radius: 5px;	
 	padding: 10px 10px;
 	font-family: Montserrat;
+	font-size: 12px;
 }
