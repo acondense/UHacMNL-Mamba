@@ -87,9 +87,9 @@
 			$scope.stepTo2 = function() {
 				// temporarty database
 				var tempAccountNo = $scope.bankAccoutNo;
-				alert("go to 2");
+				// alert("go to 2");
 
-				firebase.database().ref('tempData/accountNo').set({
+				firebase.database().ref('tempData/accout').set({
 					accountNo: tempAccountNo
 				});
 			}

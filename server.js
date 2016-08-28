@@ -50,6 +50,10 @@ app.get('/postroute',function(req,res){
         });
 });
 
+app.get('/loan-page', function(req, res) {
+  res.render(path.join(__dirname+'/views/loan-page/index.html'));
+});
+
 app.get('/loanroute',function(req,res){
   // res.render(path.join(__dirname+'/views/loan-page/index.html'));
   
